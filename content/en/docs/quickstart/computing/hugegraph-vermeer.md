@@ -38,14 +38,12 @@ Please ensure that `docker-compose.yaml` exists in your project root directory. 
 # limitations under the License.
 #
 
-version: '3.8'
-
 services:
   vermeer-master:
     image: hugegraph/vermeer
     container_name: vermeer-master
     volumes:
-      - ~/:/go/bin/config # Change here to your actual config path
+      - ~/.config:/go/bin/config # Change here to your actual config path
     command: --env=master
     networks:
       vermeer_network:
@@ -266,7 +264,7 @@ POST http://localhost:8688/tasks/create
  "output.type": "local",
  "output.parallel": "1",
  "output.file_path": "result/pagerank"
- 	}
+  }
 }
 ```
 

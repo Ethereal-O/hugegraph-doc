@@ -37,14 +37,12 @@ master 是负责通信、转发、汇总的节点，计算量和占用资源量�
 # limitations under the License.
 #
 
-version: '3.8'
-
 services:
   vermeer-master:
     image: hugegraph/vermeer
     container_name: vermeer-master
     volumes:
-      - ~/:/go/bin/config # Change here to your actual config path
+      - ~/.config:/go/bin/config # Change here to your actual config path
     command: --env=master
     networks:
       vermeer_network:
@@ -264,7 +262,7 @@ POST http://localhost:8688/tasks/create
  "output.type": "local",
  "output.parallel": "1",
  "output.file_path": "result/pagerank"
- 	}
+  }
 }
 ```
 
